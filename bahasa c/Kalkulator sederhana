@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <io.h>
+
+float a, b;
+int opsi;
+
+int main()
+{
+kembali:
+
+    printf("-- Kalkulator -- \n ");
+    printf("1. Pertambahan \n ");
+    printf("2. Pegurangan \n ");
+    printf("3. Perkalian \n ");
+    printf("4. Pembagian \n ");
+
+    printf("Pilih Opsi di atas = ");
+    scanf("%d", &opsi);
+
+    printf("\n\n");
+
+    switch (opsi)
+    {
+    case 1:
+        printf("Masukan Angka Pertama = ");
+        scanf("%f", &a);
+        printf("Masukan Angka Kedua = ");
+        scanf("%f", &b);
+        printf("Hasil Penjumlahan %.2f + %.2f = %.2f ", a, b, a + b);
+        printf("\n ");
+        goto kembali;
+
+    case 2:
+        printf("Masukan Angka Pertama = ");
+        scanf("%f", &a);
+        printf("Masukan Angka Kedua = ");
+        scanf("%f", &b);
+        printf("Hasil Penjumlahan %.2f - %.2f = %.2f ", a, b, a - b);
+        printf("\n ");
+        goto kembali;
+
+    case 3:
+        printf("Masukan Angka Pertama = ");
+        scanf("%f", &a);
+        printf("Masukan Angka Kedua = ");
+        scanf("%f", &b);
+        printf("Hasil Penjumlahan %.2f * %.2f = %.2f ", a, b, a * b);
+        printf("\n ");
+        goto kembali;
+
+    case 4:
+        printf("Masukan Angka Pertama = ");
+        scanf("%f", &a);
+        printf("Masukan Angka Kedua = ");
+        scanf("%f", &b);
+        printf("Hasil Penjumlahan %.2f / %.2f = %.2f ", a, b, a / b);
+        printf("\n");
+        goto kembali;
+
+    default:
+        break;
+    }
+
+    return 0;
+}
