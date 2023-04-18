@@ -1,0 +1,144 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+// udh kelar
+
+public class tugas_besar2 {
+
+    private int[][] data; // elemen matriks
+    private int baris; // jumlah baris
+    private int kolom; // jumlah kolom
+
+    // constructor untuk membuat matriks dengan ukuran baris x kolom
+    public tugas_besar2(int baris, int kolom) {
+        this.baris = baris;
+        this.kolom = baris;
+        data = new int[baris][kolom];
+    }
+
+    // method untuk memasukkan data ke dalam matriks
+    public void inputData() {
+        Scanner input = new Scanner(System.in);
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print("input data [" + (i + 1) + "]" + "[" + (j + 1) + "] : ");
+                data[i][j] = input.nextInt();
+            }
+        }
+    }
+
+    // method untuk menghitung penjumlahan elemen-elemen positif dalam matriks
+    public int bil_positif() {
+        int sum = 0;
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                if (data[i][j] > 0) {
+                    sum += data[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    // method untuk menghitung penjumlahan elemen-elemen negatif dalam matriks
+    public int bil_negatif() {
+        int sum = 0;
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                if (data[i][j] < 0) {
+                    sum += data[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    // method untuk menghitung penjumlahan elemen-elemen ganjil dalam matriks
+    public int ganjil() {
+        int sum = 0;
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                if (data[i][j] % 2 != 0) {
+                    sum += data[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    // method untuk menghitung penjumlahan elemen-elemen genap dalam matriks
+    public int genap() {
+        int sum = 0;
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                if (data[i][j] % 2 == 0) {
+                    sum += data[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    public int bil_semua() {
+        int sum = 0;
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                sum += data[i][j];
+            }
+        }
+
+        return sum;
+    }
+
+    public void printMatrix() {
+
+        System.out.println("\n");
+
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print(data[i][j] + " \t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input ukuran matrix = ");
+        int baris = input.nextInt();
+
+        int kolom = baris;
+
+        tugas_besar2 tugas_besar2 = new tugas_besar2(baris, kolom);
+        tugas_besar2.inputData();
+        tugas_besar2.printMatrix();
+
+        System.out.println("\n");
+
+        int bil_positif = tugas_besar2.bil_positif();
+        int bil_negatif = tugas_besar2.bil_negatif();
+        int ganjil = tugas_besar2.ganjil();
+        int genap = tugas_besar2.genap();
+        int bil_semua = tugas_besar2.bil_semua();
+
+        System.out.println("Jumlah elemen  positif: " + bil_positif);
+        System.out.println("Jumlah elemen  negatif: " + bil_negatif);
+        System.out.println("Jumlah elemen  ganjil: " + ganjil);
+        System.out.println("Jumlah elemen  genap: " + genap);
+        System.out.println("jumlah semua elemen: " + bil_semua);
+
+    }
+}
