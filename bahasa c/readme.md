@@ -3,3 +3,4 @@
 - Membuat kalkulator sederhana
 - Menghitung nilai rata rata siswa
 - Algoritma seperti insertion sort, Selection sort
+- Metode FIFO (First In First Out) dan LIFO (Last In First Out)
